@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% block content %}
+
+        <div class="d-md-none header_navbar_collapse">
+        <ul class="header_navbar_collapse_nav" style="min-height: 54px">
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link active" href="/"><span class="icon-home"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/explore"> <span class="fa fa-search" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/add"> <span class="fa fa-plus" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/shop/orders">
+                  <span class="icon-cart"></span>
+                <p> </p></a>
+            </div>
+          </li>
+
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/profile/notifications">
+
+                <span class="fa fa-user"></span>
+
+                <p> </p>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+        <main class="client-template">
+            <section class="main">
+
+    
+    <div class="siteCategories pt-5 pb-3">
+    <div class="container">
+        <!-- <h2 class="font-weight-bold mb-5">Our categories</h2> -->
+        <div class="row">
+                        {% for i in kategoriyalar %}
+
+                                                <div class="col-md-2 col-4">
+                        <a class="siteCategories--item" href="{% url 'category' category_id=i.id %}">
+                            <img alt="Telefon va akksisuarlar" height="100" src="{{ i.category_name.url }}"
+                                 width="100">
+                            <span> {{ i.name}}  <small>(15)</small> </span>
+                        </a>
+                    </div>                                                                                                                                                                                                                         
+                                                                
+                        {% endfor %}
+                                                                </div>
+    </div>
+</div>
+    <div class="container" id="productsList">
+        <div class="productsList py-4">
+    <div class="row align-items-center justify-content-between">
+        <div class="col-auto">
+            <h2 class="mb-3 font-weight-bold">Yangi kelgan mahsulotlar</h2>
+        </div>
+        <div class="col-auto">
+            <div class="mb-3">
+                <a href="{% url 'barchasi' %}">Barchasini ko'rish</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+                    {% for i in apps_teskari %}
+<div class="col-md-3 col-sm-4 col-6">
+    <div class="productsList--item">
+        <a href="{% url 'detail' i.pk %}" class="productsList--item--link"></a>
+        <div class="productsList--item--image">
+            <img src="{{ i.foto.url }}" style="object-fit: cover; width : 100%; height:200px">
+        </div>
+        <div class="productsList--item--info">
+            <div class="productsList--item--title">
+                {{ i.zagolovok }}
+            </div>
+            <div class="productsList--item--price">
+                <strong class="font-weight-bold"> {{ i.tsena }},000 </strong>
+                                
+                <span class="small">so'm</span>
+            </div>
+            <div class="productsList--item--orders">
+                buyurtmalar: 885
+            </div>
+        </div>
+    </div>
+</div>     {% endfor %}               
+           </div>
+</div>
+        <div class="productsList py-4">
+    <div class="row align-items-center justify-content-between">
+        <div class="col-auto">
+            <h2 class="mb-3 font-weight-bold"> Ommabop mahsulotlar </h2>
+        </div>
+        <div class="col-auto">
+            <div class="mb-3">
+                <a href="{% url 'barchasi' %}"> Barchasini korish </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+                    {% for i in apps %}
+<div class="col-md-3 col-sm-4 col-6">
+    <div class="productsList--item">
+        <a href="{% url 'detail' i.pk %}" class="productsList--item--link"></a>
+        <div class="productsList--item--image">
+            <img src="{{ i.foto.url }}" style="object-fit: cover; width : 100%; height:200px">
+        </div>
+        <div class="productsList--item--info">
+            <div class="productsList--item--title">
+                {{ i.zagolovok }}
+            </div>
+            <div class="productsList--item--price">
+                <strong class="font-weight-bold"> {{ i.tsena }},000 </strong>
+                                
+                <span class="small">so'm</span>
+            </div>
+            <div class="productsList--item--orders">
+                buyurtmalar: 392
+            </div>
+        </div>
+    </div>
+</div>         {% endfor %}           
+            </div>
+</div>    
+</div>
+
+    <section class="advantagesSection">
+        <div class="container">
+            <h2 class="font-weight-bold mb-5">100k.uz qulayliklari</h2>
+            <div class="row text-center">
+                <div class="col-md col-sm-6 mb-4">
+                    <div class="advantagesSection--item">
+                        <i class="fa fa-truck"></i>
+                        <h3>Tezkor yetkazib berish xizmati</h3>
+                        <p> Buyurtmangiz O'zbekistonning barcha viloyatlariga 3 kun ichida yetqazib beriladi. </p>
+                    </div>
+                </div>
+                <div class="col-md col-sm-6 mb-4">
+                    <div class="advantagesSection--item">
+                        <i class="fa fa-money"></i>
+                        <h3>To'lov istalgan usulda</h3>
+                        <p>Buyurtmani oldindan click, payme yoki buyurtmani qo'lingizga olganingizdan keyin amalga oshiring.</p>
+                    </div>
+                </div>
+                <div class="col-md col-sm-6 mb-4">
+                    <div class="advantagesSection--item">
+                        <i class="fa fa-support"></i>
+                        <h3> CALL-CENTER </h3>
+                        <p> Dam olish kunlarisiz qo'llab quvvatlash bo'limi mavjud. <br>  <strong>+998 55 500 55-11</strong> </p>
+                    </div>
+                </div>
+                <div class="col-md col-sm-6 mb-4">
+                    <div class="advantagesSection--item">
+                        <i class="fa fa-gift"></i>
+                        <h3> Mijozlarni rag'batlantirish tizimi  </h3>
+                        <p> Doimiy mijozlar uchun sovg'alar va bonuslar taqdim etiladi. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>        </main>
+
+  {% endblock content %}      

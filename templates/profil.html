@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+        <div class="d-md-none header_navbar_collapse">
+        <ul class="header_navbar_collapse_nav" style="min-height: 54px">
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/"><span class="icon-home"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/explore"> <span class="fa fa-search" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/add"> <span class="fa fa-plus" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/shop/orders">
+                  <span class="icon-cart"></span>
+                <p> </p></a>
+            </div>
+          </li>
+
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/profile/notifications">
+
+                <span class="fa fa-user"></span>
+
+                <p> </p>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+        <main class="client-template">
+            <section class="main">
+    
+    <div class="container border-bottom-4">
+    <div class="content_name_block">
+        <a href="/" class="content_name_block_back"><span class="icon-arrow"></span></a>
+        <div class="content_name_block_text"><p> Hojiakbar Djuraev </p></div>
+    </div>
+</div>
+
+    <div class="container">
+        <div class="content_profile">
+
+            <div class="content_profile_main">
+              <div class="content_profile_name">
+                <div class="content_profile_name_img">
+
+                                        <svg style="width: 100px; height: 100px;" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
+                    </svg>
+                    
+                </div>
+                <div class="content_profile_name_text">
+                  <h2> Hojiakbar Djuraev </h2>
+                  <p>+998997215333</p>
+                  <a href="/profile/settings" class="btn btn-link"> Sozlamalarga o'tish </a>
+                </div>
+              </div>
+
+              <div class="content_profile_settings">
+                <a href="/shop/orders" class="content_profile_setting"
+                  ><div class="content_profile_setting_icon"><span class="icon-all-order"></span></div>
+                  <div class="content_profile_setting_border">
+                    <div class="content_profile_setting_text"><p> Mening buyurtmalarim </p></div>
+                    <div class="content_profile_setting_next"><span class="icon-arrow"></span></div></div></a>
+
+                <a href="/provider" class="content_profile_setting"
+                  ><div class="content_profile_setting_icon"><span class="icon-all-order"></span></div>
+                  <div class="content_profile_setting_border">
+                    <div class="content_profile_setting_text"><p> Mening mahsulotlarim </p></div>
+                    <div class="content_profile_setting_next"><span class="icon-arrow"></span></div></div></a>
+
+                <a href="/shop/favorite" class="content_profile_setting"
+                  ><div class="content_profile_setting_icon"><span class="icon-pending-payment"></span></div>
+                  <div class="content_profile_setting_border border-0">
+                    <div class="content_profile_setting_text"><p> Mening sevimlarim </p></div>
+                    <div class="content_profile_setting_next"><span class="icon-arrow"></span></div></div
+                ></a>
+              </div>
+            </div>
+
+
+            <div class="content_profile_gray"></div>
+
+            <div class="content_profile_other">
+              <div class="content_profile_settings">
+                   <a href="/profile/buy-bonus" class="content_profile_setting d-none">
+                        <div class="content_profile_setting_icon"><span class="icon-pending-payment"></span></div>
+                        <div class="content_profile_setting_border">
+                        <div class="content_profile_setting_text"><p> Bonus xarid qilish </p></div>
+                        <div class="content_profile_setting_next"><span class="icon-arrow"></span></div></div>
+                    </a>
+
+
+                    <a href="/contacts" class="content_profile_setting">
+                        <div class="content_profile_setting_icon"><span class="icon-support"></span></div>
+                        <div class="content_profile_setting_border">
+                        <div class="content_profile_setting_text"><p> Mijozlarni qo'llab-quvvatlash </p></div>
+                        <div class="content_profile_setting_next"><span class="icon-arrow"></span></div></div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>        </main>
+
+        {% endblock content %}

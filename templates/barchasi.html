@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+        <div class="d-md-none header_navbar_collapse">
+        <ul class="header_navbar_collapse_nav" style="min-height: 54px">
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/"><span class="icon-home"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/explore"> <span class="fa fa-search" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/add"> <span class="fa fa-plus" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/shop/orders">
+                  <span class="icon-cart"></span>
+                <p> </p></a>
+            </div>
+          </li>
+
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/profile/notifications">
+
+                <span class="fa fa-user"></span>
+
+                <p> </p>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+        <main class="client-template">
+            <section class="main">
+    
+    <div class="container border-bottom-4">
+        <div class="header_tab_menu">
+    <div class="header_menu" style="overflow: auto">
+        <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default "> Barchasi </a> 
+                
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '12' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Telefon va akksisuarlar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '29' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default active "> Maishiy texnika </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '11' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Go&#039;zallik va salomatlik </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '20' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Sovg&#039;alar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '21' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Uy va hovli uchun </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '16' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Quloqchinlar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '22' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Аvtomobillar uchun aksessuarlar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '14' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> GPS soatlar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '15' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Aqlli soatlar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '23' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Bolajonlar uchun </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '24' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Kitoblar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '25' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Voyaga etganlar uchun </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '26' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Bolajonlar </a> 
+                    <a  data-request="onFilter" data-request-update="'product/list': '#productsList'" data-request-data="'category_id': '27' "
+                data-request-success="$(this).parent().find('.btn').removeClass('active'); $(this).addClass('active');"
+                class="btn btn-default  "> Avtomobillar uchun </a> 
+            </div>
+    
+</div>
+
+<style>
+.header_menu {
+    padding: 12px;
+}
+
+.header_menu .btn-default {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.header_menu .btn-default.active, .header_menu .btn-default:hover {
+    background-color: #eee;    
+}
+</style>    </div>
+
+    <div class="container" id="productsList">
+        <div class="content_grid">
+    <div class="row">
+
+
+{% for i in object_list %}
+
+                    <div class="col-sm-3 col-4" style="padding: 1px">
+    <div class="content_grid_card" style="padding: 0px">
+        <a href="/shop/product/kiyim-quritgich">
+            <img loading="lazy" class="lazyload" src="https://100k.uz/themes/stock/assets/img/loading.gif" data-src="https://100k.uz/storage/app/uploads/public/634/81f/1d7/thumb_14387_300_300_0_0_crop.jpg" alt="Kiyim quritgich" /> 
+        </a>
+        
+        <a  class="content_grid_card_basket"
+            data-request="onBookmark" 
+            data-request-data="id: 881" 
+            data-request-success="$(this).find('span').toggleClass('text-success')" 
+            data-request-flash href="javascript:">
+                <span class="icon-bookmark "></span>
+          </a>
+    
+        <div class="content_grid_card_price">
+            <p> 347,000 so'm </p>
+        </div>
+    </div>
+</div>                    <div class="col-sm-3 col-4" style="padding: 1px">
+    <div class="content_grid_card" style="padding: 0px">
+        <a href="/shop/product/star-shower-laser">
+            <img loading="lazy" class="lazyload"  data-src="{{ i.foto.url }}" 
+            style="object-fit: cover; width : 100%; height:200px " /> 
+        </a>
+        
+        <a  class="content_grid_card_basket"
+            data-request="onBookmark" 
+            data-request-data="id: 880" 
+            data-request-success="$(this).find('span').toggleClass('text-success')" 
+            data-request-flash href="javascript:">
+                <span class="icon-bookmark "></span>
+          </a>
+    
+        <div class="content_grid_card_price">
+            <p>{{ i.tsena }},000 so'm </p>
+        </div>
+    </div>
+</div>        
+                
+                {% endfor %}        
+            </div>
+</div>    </div>
+</section>        </main>
+
+       {% endblock content %}

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+        <div class="d-md-none header_navbar_collapse">
+        <ul class="header_navbar_collapse_nav" style="min-height: 54px">
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/"><span class="icon-home"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/explore"> <span class="fa fa-search" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/add"> <span class="fa fa-plus" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/shop/orders">
+                  <span class="icon-cart"></span>
+                <p> </p></a>
+            </div>
+          </li>
+
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/profile/notifications">
+
+                <span class="fa fa-user"></span>
+
+                <p> </p>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+        <main class="client-template">
+            <section class="main">
+    
+    <div class="container border-bottom-4">
+    <div class="content_name_block">
+        <a href="/" class="content_name_block_back"><span class="icon-arrow"></span></a>
+        <div class="content_name_block_text"><p> Sevimlilarim </p></div>
+    </div>
+</div>
+
+
+  <div class="container">
+    <div class="content_favorite">
+      <div class="row"> 
+                        {% for i in object_list %}
+
+                        <div class="col-sm-3 col-4" style="padding: 1px">
+    <div class="content_grid_card" style="padding: 0px">
+        <a href="/shop/product/juft-qol-soati">
+            <img loading="lazy" class="lazyload"  data-src="{{ i.foto.url }}" alt="Juft Qo&#039;l Soati" /> 
+        </a>
+        
+        <a  class="content_grid_card_basket"
+            data-request="onBookmark" 
+            data-request-data="id: 894" 
+            data-request-success="$(this).find('span').toggleClass('text-success')" 
+            data-request-flash href="javascript:">
+                <span class="icon-bookmark "></span>
+          </a>
+    
+        <div class="content_grid_card_price">
+            <p> {{ i.tsena }},000 so'm </p>
+        </div>
+    </div>
+</div>      
+        {% endfor %}    
+      </div>
+    </div>
+  </div>
+</section>        </main>
+{% endblock content %}
+        
