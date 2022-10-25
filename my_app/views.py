@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView,TemplateView,DetailView
 from .models import HomePageModel,Category
+from django.db.models import Count
 
 # class HomePageView(ListView):
 # 	model = HomePageModel
@@ -43,10 +44,13 @@ def homePageView(requests):
 	category = Category.objects.all()
 	model = HomePageModel.objects.all()
 	model_teskari = HomePageModel.objects.all().order_by()[::-1]
+	categories = Category.objects.annotate(Count('homepagemodel'))
+	soni = categories.values_list( 'homepagemodel__count')
+	mylist = zip(category, soni)
 	ctx = {
 	"apps": model,
 	"apps_teskari": model_teskari,
-	"kategoriyalar": category,
+	"kategoriyalar": mylist,
 	}
 	return render(requests,'main.html',ctx)
 

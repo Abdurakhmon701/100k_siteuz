@@ -54,13 +54,13 @@
     <div class="container">
         <!-- <h2 class="font-weight-bold mb-5">Our categories</h2> -->
         <div class="row">
-                        {% for i in kategoriyalar %}
+                        {% for i,k in kategoriyalar %}
 
                                                 <div class="col-md-2 col-4">
-                        <a class="siteCategories--item" href="{% url 'category' category_id=i.id %}">
+                        <a class="siteCategories--item" href="">
                             <img alt="Telefon va akksisuarlar" height="100" src="{{ i.category_name.url }}"
                                  width="100">
-                            <span> {{ i.name}}  <small>(15)</small> </span>
+                            <span> {{ i.name}}  <small>({{k|join:","}})</small> </span>
                         </a>
                     </div>                                                                                                                                                                                                                         
                                                                 
