@@ -55,14 +55,26 @@
                 
                 <div class="dropdown-menu mt-3 dropdown-menu-right">
                     <a href="{% url 'aloqa' %}" class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit"> Aloqa uchun </a>
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'prf' %}"> Profil </a>
-                        
+
+                    {% if user.is_authenticated %}
+                       <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'prf' %}"> Profil </a>
+                    {% else %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Profil </a>
+                    {% endif %}
                                                 
                         <a class="d-none dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/profile/buy-bonus"> Bonus xarid qilish </a>
-                        
+
+                    {% if user.is_authenticated %}
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sevimlilarim' %}"> Mening sevimlilarim </a>
+                    {% else %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Mening sevimlilarim </a>
+                    {% endif %}
+                    
+                    {% if user.is_authenticated %}
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sozlamalar' %}"> Sozlamalar </a>
-                        
+                    {% else %}   
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Sozlamalar </a>
+                    {% endif %} 
                                                 
                                         </div>
             </div>
@@ -112,13 +124,25 @@
 
                                 <div class="dropdown-menu dropdown-menu-right header_navbar_lang_menu_dropdown" style="">
                                     <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="{% url 'aloqa' %}"> Aloqa uchun </a>
-                                    <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="{% url 'prf' %}"> Profil </a>
+                                    {% if user.is_authenticated %}
+                       <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'prf' %}"> Profil </a>
+                    {% else %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Profil </a>
+                    {% endif %}
+                                                
+                        <a class="d-none dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/profile/buy-bonus"> Bonus xarid qilish </a>
 
-                                    
-                                    <a class="d-none dropdown-item header_navbar_lang_menu_dropdown_item" href="/profile/buy-bonus"> Bonus xarid qilish </a>
-
-                                    <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="{% url 'sevimlilarim' %}"> Mening sevimlilarim </a>
-                                    <a class="dropdown-item header_navbar_lang_menu_dropdown_item" href="{% url 'sozlamalar' %}"> Sozlamalar </a>
+                    {% if user.is_authenticated %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sevimlilarim' %}"> Mening sevimlilarim </a>
+                    {% else %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Mening sevimlilarim </a>
+                    {% endif %}
+                    
+                    {% if user.is_authenticated %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sozlamalar' %}"> Sozlamalar </a>
+                    {% else %}   
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Sozlamalar </a>
+                    {% endif %} 
 
                                     
 

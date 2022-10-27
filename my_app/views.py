@@ -42,8 +42,8 @@ class DetailPageView(DetailView):
 
 def homePageView(requests):
 	category = Category.objects.all()
-	model = HomePageModel.objects.all()
-	model_teskari = HomePageModel.objects.all().order_by()[::-1]
+	model = HomePageModel.objects.all()[:12]
+	model_teskari = HomePageModel.objects.all().order_by()[::-1][:12]
 	categories = Category.objects.annotate(Count('homepagemodel'))
 	soni = categories.values_list( 'homepagemodel__count')
 	mylist = zip(category, soni)
