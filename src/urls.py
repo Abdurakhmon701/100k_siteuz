@@ -20,13 +20,20 @@ from my_app import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from users import views as user
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.homePageView),
     path('aloqa/',views.AloqaPageView.as_view(),name = 'aloqa'),
     path('login/',views.LoginPageView.as_view(),name = 'login'),
     path('sevimlilar/',views.SevimliPageView.as_view(),name = 'sevimlilarim'),
-    path('sozlamalar/',views.SozlamalarPageView.as_view(),name = 'sozlamalar'),
+
+    path('plyus/',views.PlyusPageView.as_view(),name='plyus'),
+    path('buyurtma/',views.BuyurtmaPageView.as_view(),name='buyurtma'),
+    path('bildirishnoma/',views.BildirishnomaPageView.as_view(),name='bildirishnoma'),
+    path('sozlamalar/<str:user_id>/',user.profil_settings),
+
     path('profil/',views.ProfilPageView.as_view(),name = 'prf'),
     path('oferta/',views.OffertaPageView.as_view(),name = "offerta"),
     path('barchasi/',views.BarchasiPageView.as_view(),name = 'barchasi'),

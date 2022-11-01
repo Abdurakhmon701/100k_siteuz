@@ -8,6 +8,14 @@ from django.db.models import Count
 # 	template_name = 'main.html'
 
 
+class PlyusPageView(TemplateView):
+	template_name = 'plyus.html'
+
+class BuyurtmaPageView(TemplateView):
+	template_name = 'buyurtma.html'
+
+class BildirishnomaPageView(TemplateView):
+	template_name = 'bildirishnoma.html'
 
 class AloqaPageView(TemplateView):
 	template_name = 'aloqa.html'

@@ -1,132 +1,128 @@
-
 {% extends 'base.html' %}
 {% block content %}
-        <div class="d-md-none header_navbar_collapse">
-        <ul class="header_navbar_collapse_nav" style="min-height: 54px">
-          <li class="header_navbar_collapse_nav_item">
-            <div class="header_navbar_collapse_nav_item_pad">
-              <a class="header_navbar_collapse_nav_item_link " href="/"><span class="icon-home"></span>
-                <p>  </p></a>
-            </div>
-          </li>
-          <li class="header_navbar_collapse_nav_item">
-            <div class="header_navbar_collapse_nav_item_pad">
-              <a class="header_navbar_collapse_nav_item_link " href="/explore"> <span class="fa fa-search" aria-hidden="true"></span>
-                <p>  </p></a>
-            </div>
-          </li>
 
-          <li class="header_navbar_collapse_nav_item">
-            <div class="header_navbar_collapse_nav_item_pad">
-              <a class="header_navbar_collapse_nav_item_link " href="/add"> <span class="fa fa-plus" aria-hidden="true"></span>
-                <p>  </p></a>
-            </div>
-          </li>
+{% for i in users %}
+{% if user.id == i.id %} 
+         <div class="headerHeightSpacer"></div>
 
-          <li class="header_navbar_collapse_nav_item">
-            <div class="header_navbar_collapse_nav_item_pad">
-              <a class="header_navbar_collapse_nav_item_link " href="/shop/orders">
-                  <span class="icon-cart"></span>
-                <p> </p></a>
-            </div>
-          </li>
-
-
-          <li class="header_navbar_collapse_nav_item">
-            <div class="header_navbar_collapse_nav_item_pad">
-              <a class="header_navbar_collapse_nav_item_link " href="/profile/notifications">
-
-                <span class="fa fa-user"></span>
-
-                <p> </p>
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
+        
 
 
         <main class="client-template">
             <section class="main">
-    
+        
     <div class="container border-bottom-4">
     <div class="content_name_block">
-        <a href="/profile" class="content_name_block_back"><span class="icon-arrow"></span></a>
+        <a href="" class="content_name_block_back"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
         <div class="content_name_block_text"><p> Sozlamalar </p></div>
     </div>
 </div>
-
+    
     <div class="container">
-        <form data-request="onUpdate" data-request-files data-request-flash class="content_profile">
+        <form method="post" data-request="onUpdate" enctype="multipart/form-data" class="content_profile">{% csrf_token %}
+            
             <div class="content_profile_main">
-                <div class="content_profile_name">
-                    <div class="content_profile_name_img" style="background-image: url(  https://www.gravatar.com/avatar/eb56411302b3b02e5201684b8f29dc04?s=150&amp;d=mm)">
-                        <input class="input-upload" type="file" name="avatar" onchange="readURL(this);" />
-                    </div>
+                
 
+                <div class="content_profile_name">
+
+                    {% if user.image %}
+                    <div class="content_profile_name_img" 
+                   style="background-image: url(  {{ user.image.url }})">
+
+
+                  <!--  <img style="object-fit: cover; width: 100%; height: 100px" id='output'/> -->
+
+                  <!--  <img src="https://www.gravatar.com/avatar/ae805b618bf3cf832918a9f0fa6c9502?s=150&d=mm">
+ -->
+                        <input class="input-upload" accept="image/*" required="" type="file" name="image" onchange="readURL(this)" />
+                       
+                    </div>
+                    <!-- <img src="{{ user.image.url }}"> -->
+                    {% else %}
+
+                    <div class="content_profile_name_img" 
+                   style="background-image: url(  https://www.gravatar.com/avatar/ae805b618bf3cf832918a9f0fa6c9502?s=150&d=mm)">
+
+
+                  <!--  <img style="object-fit: cover; width: 100%; height: 100px" id='output'/> -->
+
+                  <!--  <img src="https://www.gravatar.com/avatar/ae805b618bf3cf832918a9f0fa6c9502?s=150&d=mm">
+ -->
+                        <input class="input-upload" accept="image/*" required="" type="file" name="image" onchange="readURL(this)" />
+                       
+                    </div>
+                {% endif %}
                     <div class="content_profile_name_text">
                         <p> Rasmingizni taxrirlang! </p>
                         <a href="javascript:" class="btn-new btn-input"> Fotosurat yuklash </a>
                     </div>
                 </div>
             </div>
-
+        
             <div class="content_profile_form">
                 <div class="form-group">
                     <label>Telefon</label>
-                    <input type="text" name="username" readonly class="form-control"  placeholder=" Telefon raqamingizni kiriting " value="+998997215333">
+                    <input type="text" name="username" readonly class="form-control" required="" placeholder=" Telefon raqamingizni kiriting " value="{{ i.username }}">
                 </div>
-
+                
                 <div class="form-group">
-                    <label> Ism</label>
-                    <input type="text" name="name" class="form-control" placeholder=" Ismingizni kiriting " value="Hojiakbar">
+                    <label>Ism</label>
+                    <input type="text" required="" name="firstname" class="form-control" 
+                    placeholder="{{ i.firstname|default:'Ismingizni kiriting'}}"  value="{{ i.firstname}}">
                 </div>
-
+                
                 <div class="form-group">
-                    <label> Familiya</label>
-                    <input type="text" name="surname" class="form-control"  placeholder=" Familiyangizni kiriting " value="Djuraev">
+                    <label> Familiya </label>
+                    <input type="text" required="" name="lastname" class="form-control"  
+                    placeholder="{{ i.lastname|default:'Familiyangizni kiriting'}}" value="{{ i.lastname }}">
                 </div>
-
+                
                 <div id="partialCountryState">
                     
 <div class="form-group">
-    <label for="accountCountry"> Viloyat </label>
-    <select id="accountCountry" class="form-control" emptyOption="" data-request="onInit" data-request-update="&quot;country-state&quot;:&quot;#partialCountryState&quot;" name="region_id"><option value=""></option><option value="13" selected="selected">Toshkent shaxar</option><option value="12">Andijon</option><option value="11">Buxoro</option><option value="1">Fargona</option><option value="10">Jizzax</option><option value="6">Namangan</option><option value="7">Navoiy</option><option value="8">Qashqadaryo</option><option value="9">Qoraqalpogiston</option><option value="5">Samarqand</option><option value="3">Sirdaryo</option><option value="4">Surxondaryo</option><option value="2">Toshkent viloyati</option><option value="14">Xorazm</option></select>
+  <label for="accountCountry"> Viloyat </label>
+     <input type="text" required="" name="viloyat" class="form-control"  placeholder="{{ i.viloyat|default:'Viloyatni kiriting'}} " value="{{ i.viloyat }}">
+  
 </div>
 
 <div class="form-group">
-    <label for="accountState"> Tuman / Shahar </label>
-    <select id="accountState" class="form-control" emptyOption="" name="district_id"><option value=""></option><option value="201">Bektemir</option><option value="202">Chilonzor</option><option value="204">Mirobod</option><option value="205">Mirzo Ulugʻbek</option><option value="208" selected="selected">Olmazor</option><option value="241">Qo&#039;yliq</option><option value="206">Sergeli</option><option value="207">Shayxontohur</option><option value="290">TTZ</option><option value="209">Uchtepa</option><option value="210">Yakkasaroy</option><option value="274">Yangi hayot</option><option value="203">Yashnobod</option><option value="235">Yunusobod</option></select>
+  <label for="accountState"> Tuman / Shahar </label>
+     <input type="text" required="" name="shahar" class="form-control"  placeholder="{{ i.shahar|default:'Shaharingizni kiriting '}}" value="{{ i.shahar }}">
+  
 </div>                </div>
-
+                
                 <div class="form-group">
                     <label> Manzilingiz </label>
-                    <input type="text" name="address" class="form-control"  placeholder="Manzilingizni kiriting" value="Tashmukhammedova 2 street 30">
+                    <input type="text" required="" name="manzil" class="form-control"  placeholder="{{ i.manzil|default:'Manzilingizni kiriting'}}" value="{{ i.manzil }}">
                 </div>
+                
+                <button 
+                type="submit" class="btn btn-block btn-primary"> Yuborish </button>
 
-                <button onclick='FB.AppEvents.logEvent("settingsSave")' data-attach-loading type="submit" class="btn btn-block btn-primary"> Yuborish </button>
-
-                <div class="text-center">
-                    <br>
-                    <a href="/profile/password"> Doimiy parol kiritish </a>
-                </div>
-
+              
+                
                 <br>
-                <p class="text-center">
-                    <a target="_blank" class="btn btn-block btn-primary" href="https://telegram.me/yuzkabot?start=16612451106076994"> Telegram botni biriktirish </a> <br>
-                    <small> TG Aktivlashtirish kodi: </small> <strong> 16612451106076994 </strong>
-                </p> <br>
-
+               <br>
+                
                 <br><br>
             </div>
+            
         </form>
     </div>
 </section>
+      
 
-
-
-
+      
+      
 <script>
+    var loadfile = function(e) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -141,5 +137,54 @@
     }
   }
 </script>        </main>
+{% else %}
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+</head>
+<style type="text/css">
+    body{
+font-family: 'Ropa Sans', sans-serif;
+margin-top: 30px;
+background-color: #F0CA00;
+background-color: #242424;
+text-align: center;
+color: #fff;
+}
+.error-heading{
+margin: 50px auto;
+width: 250px;
+border: 5px solid #fff;
+font-size: 126px;
+line-height: 126px;
+border-radius: 30px;
+text-shadow: 6px 6px 5px #000;
+}
+.error-heading img{
+width: 100%;
+}
+.error-main h1{
+font-size: 72px;
+margin: 0px;
+color: #F3661C;
+text-shadow: 0px 0px 5px #fff;
+}
+</style>
+<body>
+<div class="error-main">
+<h1>Oops!</h1>
+<div class="error-heading">403</div>
+<p>You do not have permission to access the document or program that you requested.</p>
+</div>
+<br>
+<br>
+</body>
+</html>   
 
-    {% endblock content %}
+
+
+                {% endif %}
+                {% endfor %}
+
+        {% endblock content %}

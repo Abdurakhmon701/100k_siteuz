@@ -71,7 +71,7 @@
                     {% endif %}
                     
                     {% if user.is_authenticated %}
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sozlamalar' %}"> Sozlamalar </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/sozlamalar/{{ user.id }}"> Sozlamalar </a>
                     {% else %}   
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Sozlamalar </a>
                     {% endif %} 
@@ -139,7 +139,7 @@
                     {% endif %}
                     
                     {% if user.is_authenticated %}
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sozlamalar' %}"> Sozlamalar </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/sozlamalar/{{ user.id }}"> Sozlamalar </a>
                     {% else %}   
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Sozlamalar </a>
                     {% endif %} 
@@ -155,7 +155,49 @@
             </div>
         </header>
 
+        <div class="d-md-none header_navbar_collapse">
+        <ul class="header_navbar_collapse_nav" style="min-height: 54px">
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link active" href="/"><span class="icon-home"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="/explore"> <span class="fa fa-search" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
 
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="{% url 'plyus' %}"> <span class="fa fa-plus" aria-hidden="true"></span>
+                <p>  </p></a>
+            </div>
+          </li>
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="{% url 'buyurtma' %}">
+                  <span class="icon-cart"></span>
+                <p> </p></a>
+            </div>
+          </li>
+
+
+          <li class="header_navbar_collapse_nav_item">
+            <div class="header_navbar_collapse_nav_item_pad">
+              <a class="header_navbar_collapse_nav_item_link " href="{% url 'bildirishnoma' %}">
+
+                <span class="fa fa-user"></span>
+
+                <p> </p>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
        
         {% block content %}
         <!-- Qolgan HTML lar shu yerda ko'rinadi -->
