@@ -60,14 +60,15 @@
     >
         <a href="/" class="header_navbar_brand_logo">1000k.uz </a>
         <label class="content_auth_form_group">
+            <span> Tizimga kirish </span>
 
             <div class="content_auth_form_group_input">{% csrf_token %}
                 <input
-                    name="password"
-                    type="text"
-                    class="form-control"
+                    name="phone_number"
+                    type="phone"
+                    class="form-control my-phone-mask"
                     id="authUsername"
-                    placeholder="SMS xabarni kiriting... "
+                    placeholder="Telefon raqamningizni kiriting"
                 />
                 
 
@@ -77,8 +78,20 @@
                 
               
             </div>
-            
-           
+            <p class="mt-2"> 
+                <label> 
+                    <input type="checkbox" required>
+                    Men qoidalar bilan tanishdim 
+                    <a class="terms text-danger" target="_blank" href="/pages/privacy-policy"> Foydalanish shartlari </a>
+                </label> 
+            </p>
+           <!--  <p class="mt-2"> 
+                <label> 
+                    <input type="checkbox" required>
+                    Men qoidalar bilan tanishdim 
+                    <a class="terms text-danger" target="_blank" href="/pages/privacy-policy"> Foydalanish shartlari </a>
+                </label> 
+            </p> -->
         </label>
     </form>
 </div>        </div>

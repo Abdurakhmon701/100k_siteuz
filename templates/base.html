@@ -59,7 +59,7 @@
                     {% if user.is_authenticated %}
                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'prf' %}"> Profil </a>
                     {% else %}
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Profil </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'signup' %}"> Profil </a>
                     {% endif %}
                                                 
                         <a class="d-none dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/profile/buy-bonus"> Bonus xarid qilish </a>
@@ -67,14 +67,18 @@
                     {% if user.is_authenticated %}
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sevimlilarim' %}"> Mening sevimlilarim </a>
                     {% else %}
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Mening sevimlilarim </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'signup' %}"> Mening sevimlilarim </a>
                     {% endif %}
                     
                     {% if user.is_authenticated %}
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/sozlamalar/{{ user.id }}"> Sozlamalar </a>
                     {% else %}   
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Sozlamalar </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'signup' %}"> Sozlamalar </a>
                     {% endif %} 
+
+                    {% if user.is_authenticated %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'logout' %}"> Chiqish </a>
+                   {% endif %}
                                                 
                                         </div>
             </div>
@@ -127,7 +131,7 @@
                                     {% if user.is_authenticated %}
                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'prf' %}"> Profil </a>
                     {% else %}
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Profil </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'signup' %}"> Profil </a>
                     {% endif %}
                                                 
                         <a class="d-none dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/profile/buy-bonus"> Bonus xarid qilish </a>
@@ -135,14 +139,19 @@
                     {% if user.is_authenticated %}
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'sevimlilarim' %}"> Mening sevimlilarim </a>
                     {% else %}
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Mening sevimlilarim </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'signup' %}"> Mening sevimlilarim </a>
                     {% endif %}
                     
                     {% if user.is_authenticated %}
                         <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="/sozlamalar/{{ user.id }}"> Sozlamalar </a>
                     {% else %}   
-                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'login' %}"> Sozlamalar </a>
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'signup' %}"> Sozlamalar </a>
                     {% endif %} 
+
+
+                    {% if user.is_authenticated %}
+                        <a class="dropdown-item header_navbar_lang_menu_dropdown_item" style="color: inherit" href="{% url 'logout' %}"> Chiqish </a>
+                   {% endif %}
 
                                     
 

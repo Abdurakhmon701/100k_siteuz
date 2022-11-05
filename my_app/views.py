@@ -20,8 +20,6 @@ class BildirishnomaPageView(TemplateView):
 class AloqaPageView(TemplateView):
 	template_name = 'aloqa.html'
 
-class LoginPageView(TemplateView):
-	template_name = 'login.html'
 
 class SozlamalarPageView(TemplateView):
 	template_name = 'sozlamalar.html'

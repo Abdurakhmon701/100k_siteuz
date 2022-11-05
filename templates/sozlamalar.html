@@ -35,7 +35,7 @@
 
                   <!--  <img src="https://www.gravatar.com/avatar/ae805b618bf3cf832918a9f0fa6c9502?s=150&d=mm">
  -->
-                        <input class="input-upload" accept="image/*" required="" type="file" name="image" onchange="readURL(this)" />
+                        <input class="input-upload" accept="image/*"  type="file" name="image" onchange="readURL(this)" />
                        
                     </div>
                     <!-- <img src="{{ user.image.url }}"> -->
@@ -49,7 +49,7 @@
 
                   <!--  <img src="https://www.gravatar.com/avatar/ae805b618bf3cf832918a9f0fa6c9502?s=150&d=mm">
  -->
-                        <input class="input-upload" accept="image/*" required="" type="file" name="image" onchange="readURL(this)" />
+                        <input class="input-upload" accept="image/*"  type="file" name="image" onchange="readURL(this)" />
                        
                     </div>
                 {% endif %}
@@ -63,18 +63,18 @@
             <div class="content_profile_form">
                 <div class="form-group">
                     <label>Telefon</label>
-                    <input type="text" name="username" readonly class="form-control" required="" placeholder=" Telefon raqamingizni kiriting " value="{{ i.username }}">
+                    <input type="text" name="username" readonly class="form-control"  placeholder=" Telefon raqamingizni kiriting " value="{{ i.username }}">
                 </div>
                 
                 <div class="form-group">
                     <label>Ism</label>
-                    <input type="text" required="" name="firstname" class="form-control" 
+                    <input type="text" name="firstname" class="form-control" 
                     placeholder="{{ i.firstname|default:'Ismingizni kiriting'}}"  value="{{ i.firstname}}">
                 </div>
                 
                 <div class="form-group">
                     <label> Familiya </label>
-                    <input type="text" required="" name="lastname" class="form-control"  
+                    <input type="text"  name="lastname" class="form-control"  
                     placeholder="{{ i.lastname|default:'Familiyangizni kiriting'}}" value="{{ i.lastname }}">
                 </div>
                 
@@ -82,19 +82,19 @@
                     
 <div class="form-group">
   <label for="accountCountry"> Viloyat </label>
-     <input type="text" required="" name="viloyat" class="form-control"  placeholder="{{ i.viloyat|default:'Viloyatni kiriting'}} " value="{{ i.viloyat }}">
+     <input type="text"  name="viloyat" class="form-control"  placeholder="{{ i.viloyat|default:'Viloyatni kiriting'}} " value="{{ i.viloyat }}">
   
 </div>
 
 <div class="form-group">
   <label for="accountState"> Tuman / Shahar </label>
-     <input type="text" required="" name="shahar" class="form-control"  placeholder="{{ i.shahar|default:'Shaharingizni kiriting '}}" value="{{ i.shahar }}">
+     <input type="text"  name="shahar" class="form-control"  placeholder="{{ i.shahar|default:'Shaharingizni kiriting '}}" value="{{ i.shahar }}">
   
 </div>                </div>
                 
                 <div class="form-group">
                     <label> Manzilingiz </label>
-                    <input type="text" required="" name="manzil" class="form-control"  placeholder="{{ i.manzil|default:'Manzilingizni kiriting'}}" value="{{ i.manzil }}">
+                    <input type="text"  name="manzil" class="form-control"  placeholder="{{ i.manzil|default:'Manzilingizni kiriting'}}" value="{{ i.manzil }}">
                 </div>
                 
                 <button 
