@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from my_app import views
 
 from django.conf import settings
@@ -26,6 +26,14 @@ from users import views as user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #api uchun url
+    path('api/v1',include('api.urls')),
+
+
+
+
+    #templates uchun urllar
     path('',views.homePageView,name='main'),
     path('aloqa/',views.AloqaPageView.as_view(),name = 'aloqa'),
 
