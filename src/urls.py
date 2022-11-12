@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #api uchun url
-    path('api/v1',include('api.urls')),
+    path('api/',include('api.urls')),
 
 
 

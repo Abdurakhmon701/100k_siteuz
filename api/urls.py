@@ -1,12 +1,14 @@
 from django.urls import path,include
-from .views import HomePageAPIView
+from .views import *
 from rest_framework.routers import DefaultRouter
 
 
-router = DefaultRouter()
+# router = DefaultRouter()
 
-router.register('mahsulotlar',HomePageAPIView)
+# router.register('mahsulotlar',HomePageAPIView)
 
 urlpatterns = [
-	path('',include(router.urls))
+	path('mahsulotlar/',HomePageAPIView.as_view()),
+	path('category/',CategoryAPIView.as_view()),
+	path('mahsulotlarr/<int:pk>/',ProductById.as_view()),
 	]

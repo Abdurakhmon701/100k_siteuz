@@ -14,6 +14,6 @@ class HomePageModel(models.Model):
 	foto = models.ImageField(upload_to = 'images/')
 	category = models.ForeignKey(Category,null = True,on_delete=models.SET_NULL)
 
-	def __str__(self):
-		return self.zagolovok
+	# def __str__(self):
+	# 	return self.zagolovok
 # Create your models here.
